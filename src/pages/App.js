@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChromePicker } from 'react-color';
+import { SketchPicker } from 'react-color';
 import './App.css';
 import reactLogo from '../react.svg';
 import arduinoLogo from '../arduino.svg';
@@ -58,7 +58,7 @@ function App() {
 
   const renderColorPicker = () => (
     <div className="picker">
-      <ChromePicker
+      <SketchPicker
         color={selectedColor}
         onChange={onColorChange}
         onChangeComplete={onColorChangeComplate}

@@ -14,12 +14,13 @@
   pointer-events: none;
   width: 20vw;
   height: 13vh;
+  margin-left: -8vw;
 }
 
 .App-logo-arduino {
   pointer-events: none;
-  width: 13vw;
-  height: 10vh;
+  width: 8vw;
+  height: 9vh;
 }
 
 .port {
