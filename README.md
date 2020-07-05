@@ -4,7 +4,7 @@ An Electron/React app for communication with Arduino via **serial port**
 
 ![](demo.gif)
 
-## Development
+## Development
 
 ```
 npm i
@@ -12,7 +12,7 @@ npm start
 npm run start-electron
 ```
 
-## Build
+## Build
 
 ```
 npm run build && npm run build-electron
