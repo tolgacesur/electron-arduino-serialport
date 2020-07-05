@@ -28,6 +28,10 @@
   padding-left: 5px;
 }
 
+.picker {
+  margin: 30px;
+}
+
 header {
   display: flex;
   align-items: center;

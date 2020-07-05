@@ -27,5 +27,6 @@ void loop() {
   
     analogWrite(LED_RED, r);
     analogWrite(LED_GREEN, g);
+    analogWrite(LED_BLUE, b);
   }
 }

@@ -20,7 +20,6 @@ const init = async () => {
         });
 
         ipcMain.on(channels.SERIALPORT_SEND, (event, msg) => {
-            console.log(msg);
             port.write(msg, (err) => {
                 if (err) {
                     return console.log('Error: ', err.message);

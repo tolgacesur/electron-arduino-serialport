@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ChromePicker } from 'react-color';
 import './App.css';
 import reactLogo from '../react.svg';
 import arduinoLogo from '../arduino.svg';
@@ -11,6 +12,7 @@ function App() {
   const [appVersion, setAppVersion] = useState('');
   const [ports, setPorts] = useState([]);
   const [isConnected, setIsConnected] = useState(false);
+  const [selectedColor, setSelectedColor] = useState();
 
   ipcRenderer.send(channels.APP_INFO);
   ipcRenderer.on(channels.APP_INFO, (event, arg) => {
@@ -33,6 +35,14 @@ function App() {
     ipcRenderer.send(channels.SERIALPORT_CONNECT, port);
   }
 
+  const onColorChange = (color) => {
+    setSelectedColor(color.hex);
+  }
+
+  const onColorChangeComplate = (color) => {
+    ipcRenderer.send(channels.SERIALPORT_SEND, color.hex);
+  }
+
   const renderPorts = () => (
     <ol>
       {
@@ -46,6 +56,16 @@ function App() {
     </ol>
   )
 
+  const renderColorPicker = () => (
+    <div className="picker">
+      <ChromePicker
+        color={selectedColor}
+        onChange={onColorChange}
+        onChangeComplete={onColorChangeComplate}
+      />
+    </div>
+  )
+
   return (
     <div className="App">
       <header>
@@ -53,7 +73,7 @@ function App() {
         <img src={arduinoLogo} className="App-logo-arduino" alt="logo" />
       </header>
       {
-        !isConnected && renderPorts()
+        !isConnected ? renderPorts() : renderColorPicker()
       }
       <footer>
         <small>{appName} version {appVersion}</small>
