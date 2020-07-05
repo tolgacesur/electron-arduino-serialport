@@ -1,0 +1,81 @@
+.App {
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-logo-react {
+  pointer-events: none;
+  width: 20vw;
+  height: 13vh;
+}
+
+.App-logo-arduino {
+  pointer-events: none;
+  width: 13vw;
+  height: 10vh;
+}
+
+.port {
+  text-align: left;
+  margin-bottom: 10px;
+  padding-left: 5px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+}
+
+small {
+  font-size: 12px;
+  color: #a5a5a588;
+}
+
+button {
+  margin-right: 10px;
+  width: 100px;
+  height: 35px;
+  background-color: #30b3c7;
+  border: 0;
+  border-radius: 6px;
+  color: white;
+  outline: none;
+}
+
+button:hover {
+  background-color: #337079;
+}
+
+button:active {
+  color: #dddd;
+}
+
+ol {
+  list-style: none;
+  counter-reset: item;
+}
+
+ol > li{
+  counter-increment: item;
+  margin-bottom: 5px;
+}
+
+ol > li:before {
+  margin-right: 10px;
+  content: counter(item);
+  background: #30b3c7;
+  border-radius: 100%;
+  color: white;
+  width: 1.3em;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  top: 7px;
+}
